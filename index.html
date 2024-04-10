@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast Notification</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="mainContent">
+      <div class="online">
+        <h2>Online</h2>
+        <hr />
+        <div class="peopleContainer"></div>
+      </div>
+      <div class="chatroom">
+        <h1>Chatroom B</h1>
+        <hr />
+        <!-- <textarea
+          aria-placeholder="Send Message..."
+          placeholder="Send Message..."
+          id="chatReply"
+        ></textarea> -->
+        <div class="messageContainer">
+          <input type="text" id="chatReply" placeholder="Send Message..." />
+          <input
+            id="sendMsg"
+            type="button"
+            value="Send"
+            onclick="submitMessage()"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="toastContainer"></div>
+  </body>
+</html>

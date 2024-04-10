@@ -1,0 +1,129 @@
+body {
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.toastContainer {
+  visibility: hidden;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
+.toast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #05b505;
+  color: white;
+  padding: 1rem;
+  width: 200px;
+  height: 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+.close {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 20px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+.mainContent {
+  background-color: white;
+  width: 60%;
+  height: 80vh;
+  border-radius: 40px;
+  display: flex;
+  -webkit-box-shadow: 10px 10px 70px 15px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 10px 10px 70px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 70px 15px rgba(0, 0, 0, 0.1);
+}
+.online {
+  width: 20%;
+  height: 98.5%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.peopleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.chatroom {
+  border-left: 1px solid black;
+  width: 80%;
+  height: 98.5%;
+  padding: 5px;
+}
+hr {
+  width: 100%;
+}
+
+.personOnline {
+  width: 80%;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px;
+  margin: 10px 0;
+}
+.onlineCircle {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #05b505;
+}
+.offlineCircle {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #b00909;
+}
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#chatReply {
+  width: 70%;
+  height: 30px;
+  border: 1px solid black;
+  padding: 2px;
+  margin: 3px 0px;
+}
+
+#sendMsg {
+  width: 15%;
+  height: 25px;
+}
