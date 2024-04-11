@@ -19,19 +19,26 @@ const people = [
 
 function showOnline() {
   var peopleContainer = document.querySelector(".peopleContainer");
-
-  console.log(people.name);
   people.forEach((people) => {
     if (people.status === "online") {
       peopleContainer.innerHTML += `
-			<div class="personOnline">
+			<div class="personOnline bg-primary-700 text-white" onclick="error()">
 				<p> ${people.name}</p>
 				<p class="onlineCircle"> </p>
 			</div>`;
     }
+    //  else {
+    //   peopleContainer.innerHTML += `
+    // 	<div class="personOffline bg-primary-700 text-white">
+    // 		<p> ${people.name}</p>
+    // 		<p class="offlineCircle"> </p>
+    // 	</div>`;
+    // }
   });
 }
-
+function error() {
+  alert("This feature is not available yet");
+}
 function showToast() {
   var toastContainer = document.querySelector(".toastContainer");
   toastContainer.style.visibility = "visible";
@@ -39,7 +46,7 @@ function showToast() {
   people.forEach((people) => {
     if (people.newOnline) {
       toastContainer.innerHTML += `
-      <div id="toast" class="toast" role="status" aria-live="polite">
+      <div id="toast" class="toast text-white bg-secondary-600" role="status" aria-live="polite">
       <p>${people.name} is online</p>
       <span class="close" onclick="closeToast()">x </span>
     </div>`;
@@ -59,7 +66,13 @@ function closeToast() {
 
 function submitMessage() {
   var message = document.getElementById("chatReply").value;
-  console.log(message);
-  //   Github Copilot
-  document.getElementById("chatReply").value = "";
+  var messageInput = document.getElementById("chatReply");
+  if (message === "") {
+    console.log("Please enter a message");
+    messageInput.style.border = "2px solid red";
+  } else {
+    console.log(message);
+    //   Github Copilot
+    document.getElementById("chatReply").value = "";
+  }
 }

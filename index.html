@@ -4,24 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toast Notification</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/output.css" />
     <script src="main.js"></script>
   </head>
-  <body>
-    <div class="mainContent">
+  <body class="bg-primary-900">
+    <div class="mainContent bg-secondary-300">
       <div class="online">
-        <h2>Online</h2>
+        <h2 class="text-2xl">Members</h2>
         <hr />
         <div class="peopleContainer"></div>
       </div>
       <div class="chatroom">
-        <h1>Chatroom B</h1>
+        <h1 class="text-3xl">Chatroom B</h1>
         <hr />
-        <!-- <textarea
-          aria-placeholder="Send Message..."
-          placeholder="Send Message..."
-          id="chatReply"
-        ></textarea> -->
+        <div class="chatContainer"></div>
         <div class="messageContainer">
           <input type="text" id="chatReply" placeholder="Send Message..." />
           <input
