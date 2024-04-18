@@ -1664,6 +1664,10 @@ video {
   border-radius: 0.25rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -1793,24 +1797,34 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-primary-700 {
+.bg-elephant-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(36 36 225 / var(--tw-bg-opacity));
+  background-color: rgb(40 85 98 / var(--tw-bg-opacity));
 }
 
-.bg-primary-900 {
+.bg-oracle-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(33 37 142 / var(--tw-bg-opacity));
+  background-color: rgb(118 210 204 / var(--tw-bg-opacity));
 }
 
-.bg-secondary-300 {
+.bg-oracle-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(224 241 101 / var(--tw-bg-opacity));
+  background-color: rgb(73 184 180 / var(--tw-bg-opacity));
 }
 
-.bg-secondary-600 {
+.bg-oracle-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(137 162 14 / var(--tw-bg-opacity));
+  background-color: rgb(48 156 154 / var(--tw-bg-opacity));
+}
+
+.bg-sushi-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 212 71 / var(--tw-bg-opacity));
+}
+
+.bg-sushi-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(132 176 38 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -2063,6 +2077,11 @@ video {
 
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
+}
+
+.text-elephant-900 {
+  --tw-text-opacity: 1;
+  color: rgb(38 72 83 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2438,6 +2457,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 90vh;
+  color: white;
+}
+
+.allArea {
+  background: rgb(69, 69, 69);
+  background: radial-gradient(
+    circle,
+    rgba(69, 69, 69, 1) 0%,
+    rgba(61, 61, 61, 1) 50%,
+    rgba(38, 38, 38, 1) 100%
+  );
 }
 
 .toastContainer {
@@ -2495,7 +2525,15 @@ body {
   height: 80vh;
   border-radius: 40px;
   display: flex;
-  box-shadow: 0px 0px 73px 2px rgba(176, 203, 23, 0.69);
+  /* -webkit-box-shadow: 0px 0px 73px 2px rgba(176, 203, 23, 0.69);
+  -moz-box-shadow: 0px 0px 73px 2px rgba(176, 203, 23, 0.69);*/
+  box-shadow: 0px 0px 73px 2px rgb(73, 184, 180, 0.35);
+  margin: 0 auto;
+  /* Add the following properties to center the container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .online {
@@ -2533,10 +2571,13 @@ body {
 
 hr {
   width: 100%;
+  border-color: #173540;
+  border-width: 1.45px;
 }
 
 .personOnline {
   width: 80%;
+  max-height: 45px;
   height: 35px;
   border-radius: 20px;
   /* background-color: #f0f0f0; */
@@ -2545,46 +2586,95 @@ hr {
   align-items: center;
   padding: 3px;
   margin: 10px 0;
-  color: white;
+  /* color: white; */
   cursor: pointer;
+  color: rgb(69, 69, 69);
 }
 
-.onlineCircle {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  background-color: #00ff00;
+.personOnline:hover {
+  width: 90%;
+  height: 100px;
 }
 
-.offlineCircle {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  /* background-color: #b00909; */
+.personOffline {
+  width: 80%;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px;
+  margin: 10px 0;
+  pointer-events: none;
+  opacity: 0.75;
+  color: rgba(69, 69, 69, 0.75);
 }
 
 .messageContainer {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
 
 #chatReply {
-  width: 60%;
+  width: 85%;
   height: 30px;
-  border: 1px solid black;
   padding: 2px;
-  margin: 3px 0px;
+  margin: 5px 0px 5px 8px;
   border-radius: 13px;
+  color: black;
 }
 
 #chatReply:focus {
-  width: 80%;
+  width: 95%;
+  border-radius: 0;
 }
 
 #sendMsg {
-  width: 15%;
-  height: 25px;
+  width: 10%;
+  height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 5px;
+}
+
+.chatContainer {
+  height: 83%;
+  margin: 8px;
+  /* background-color: rgb(243, 255, 237); */
+  position: relative;
+}
+
+.chatMessage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 30px;
+  /* background-color: #f0f0f0; */
+  width: 30%;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+}
+
+.myMessage {
+  width: 25%;
+  display: block;
+  border-bottom-right-radius: 0;
+}
+
+.replyMessage {
+  width: 25%;
+  display: block;
+  border-bottom-left-radius: 0;
+}
+
+.members {
+  height: 40px;
 }
 
 @media (min-width: 640px) {

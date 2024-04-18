@@ -16,37 +16,52 @@ const people = [
   { name: "Isabel", status: "online", newOnline: true },
 ];
 // TODO filter array to show people who are online, and then display that
-
+function closeToast() {
+  var toastContainer = document.querySelector(".toastContainer");
+  toastContainer.style.visibility = "hidden";
+  // toastContainer.style.animation = "fadeout 0.7s 4.5s forwards";
+}
 function showOnline() {
   var peopleContainer = document.querySelector(".peopleContainer");
   people.forEach((people) => {
     if (people.status === "online") {
       peopleContainer.innerHTML += `
-			<div class="personOnline bg-primary-700 text-white" onclick="error()">
+			<div class="personOnline bg-sushi-400" onclick="error()">
 				<p> ${people.name}</p>
-				<p class="onlineCircle"> </p>
 			</div>`;
+    } else {
+      peopleContainer.innerHTML += `
+    	<div class="personOffline bg-sushi-400">
+    		<p> ${people.name}</p>
+    		
+    	</div>`;
     }
-    //  else {
-    //   peopleContainer.innerHTML += `
-    // 	<div class="personOffline bg-primary-700 text-white">
-    // 		<p> ${people.name}</p>
-    // 		<p class="offlineCircle"> </p>
-    // 	</div>`;
-    // }
   });
 }
 function error() {
-  alert("This feature is not available yet");
+  closeToast();
+  var mainArea = document.querySelector(".mainContent");
+  Object.assign(mainArea.style, {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  });
+  mainArea.innerHTML = ` <div class="errorContainer">
+  <h2 class="text-3xl"> Error: 404 </h2>
+  <p class="text-2xl"> This page cannot be found! </p>
+  <a class="text-tertiary-default text-2xl underline" href="index.html"> Go back to the homepage </a>
+   </div>`;
 }
 function showToast() {
   var toastContainer = document.querySelector(".toastContainer");
-  toastContainer.style.visibility = "visible";
-  toastContainer.style.animation = "fadein 0.7s, fadeout 0.7s 4.5s forwards";
+  Object.assign(toastContainer.style, {
+    visibility: "visible",
+    animation: "fadein 0.7s, fadeout 0.7s 4.5s forwards",
+  });
   people.forEach((people) => {
     if (people.newOnline) {
       toastContainer.innerHTML += `
-      <div id="toast" class="toast text-white bg-secondary-600" role="status" aria-live="polite">
+      <div id="toast" class="toast text-elephant-900 bg-oracle-300" role="status" aria-live="polite">
       <p>${people.name} is online</p>
       <span class="close" onclick="closeToast()">x </span>
     </div>`;
@@ -59,20 +74,20 @@ document.addEventListener("DOMContentLoaded", function () {
   showOnline();
 });
 
-function closeToast() {
-  var toastContainer = document.getElementsByClassName("toastContainer");
-  toastContainer.style.visibility = "hidden";
-}
-
 function submitMessage() {
   var message = document.getElementById("chatReply").value;
   var messageInput = document.getElementById("chatReply");
   if (message === "") {
     console.log("Please enter a message");
     messageInput.style.border = "2px solid red";
+    messageInput.placeholder = "Please enter a message";
   } else {
-    console.log(message);
-    //   Github Copilot
+    var chatContainer = document.querySelector(".chatContainer");
+    chatContainer.innerHTML += `<div class="chatMessage bg-oracle-400 text-black myMessage"> ${message} </div>`;
+    // console.log(message);
+    messageInput.style.border = "none";
+    messageInput.placeholder = "Send a message";
     document.getElementById("chatReply").value = "";
+    chatContainer.innerHTML += `<div class="chatMessage bg-oracle-500 text-black replyMessage"> Hi there! </div>`;
   }
 }
