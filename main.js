@@ -15,26 +15,33 @@ const people = [
   { name: "Samuel", status: "offline", newOnline: false },
   { name: "Isabel", status: "online", newOnline: true },
 ];
-// TODO filter array to show people who are online, and then display that
+
 function closeToast() {
   var toastContainer = document.querySelector(".toastContainer");
   toastContainer.style.visibility = "hidden";
   // toastContainer.style.animation = "fadeout 0.7s 4.5s forwards";
 }
+
+// TODO filter array, people online first, then people offline
 function showOnline() {
   var peopleContainer = document.querySelector(".peopleContainer");
-  people.forEach((people) => {
+  const onlinePeople = people.filter((people) => people.status === "online");
+  const offlinePeople = people.filter((people) => people.status === "offline");
+  onlinePeople.forEach((people) => {
+    console.log(people);
     if (people.status === "online") {
       peopleContainer.innerHTML += `
-			<div class="personOnline bg-sushi-400" onclick="error()">
+			<div class="personOnline bg-sushi-500" onclick="error()">
 				<p> ${people.name}</p>
 			</div>`;
-    } else {
+    }
+  });
+  people.forEach((people) => {
+    if (people.status === "offline") {
       peopleContainer.innerHTML += `
-    	<div class="personOffline bg-sushi-400">
-    		<p> ${people.name}</p>
-    		
-    	</div>`;
+  <div class="personOffline bg-sushi-200" onclick="error()">
+    <p> ${people.name}</p>
+  </div>`;
     }
   });
 }
@@ -61,7 +68,7 @@ function showToast() {
   people.forEach((people) => {
     if (people.newOnline) {
       toastContainer.innerHTML += `
-      <div id="toast" class="toast text-elephant-900 bg-oracle-300" role="status" aria-live="polite">
+      <div id="toast" class="toast text-elephant-900 bg-rose-300" role="status" aria-live="polite">
       <p>${people.name} is online</p>
       <span class="close" onclick="closeToast()">x </span>
     </div>`;
@@ -77,17 +84,21 @@ document.addEventListener("DOMContentLoaded", function () {
 function submitMessage() {
   var message = document.getElementById("chatReply").value;
   var messageInput = document.getElementById("chatReply");
+  var required = document.querySelector(".requiredContainer");
   if (message === "") {
-    console.log("Please enter a message");
     messageInput.style.border = "2px solid red";
     messageInput.placeholder = "Please enter a message";
+    required.innerHTML = '<p id="required"> Please Enter a message</p>';
   } else {
     var chatContainer = document.querySelector(".chatContainer");
-    chatContainer.innerHTML += `<div class="chatMessage bg-oracle-400 text-black myMessage"> ${message} </div>`;
+    required.innerHTML = "";
+    chatContainer.innerHTML += `<div class="chatMessage bg-rose-400 text-black myMessage"> ${message} </div>`;
     // console.log(message);
     messageInput.style.border = "none";
     messageInput.placeholder = "Send a message";
     document.getElementById("chatReply").value = "";
-    chatContainer.innerHTML += `<div class="chatMessage bg-oracle-500 text-black replyMessage"> Hi there! </div>`;
+    chatContainer.innerHTML += `<div class="flex items-end"> <span class="material-symbols-outlined md-36">
+    account_circle
+    </span><p class="chatMessage bg-rose-500 text-black replyMessage"> Hi there! </p><div>`;
   }
 }
