@@ -88,7 +88,8 @@ function submitMessage() {
   if (message === "") {
     messageInput.style.border = "2px solid red";
     messageInput.placeholder = "Please enter a message";
-    required.innerHTML = '<p id="required"> Please Enter a message</p>';
+    required.innerHTML =
+      '<p id="required" class="text-red-600"> Please Enter a message</p>';
   } else {
     var chatContainer = document.querySelector(".chatContainer");
     required.innerHTML = "";

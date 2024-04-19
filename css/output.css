@@ -830,6 +830,10 @@ video {
   width: weird-and-invalid;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -1937,6 +1941,10 @@ video {
      object-fit: scale-down;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2082,6 +2090,11 @@ video {
 .text-elephant-900 {
   --tw-text-opacity: 1;
   color: rgb(38 72 83 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2520,7 +2533,7 @@ body {
 }
 
 .mainContent {
-  width: 60%;
+  /* width: 60%; */
   height: 80vh;
   border-radius: 40px;
   display: flex;
@@ -2536,6 +2549,7 @@ body {
   width: 20%;
   height: 98.5%;
   padding: 5px;
+  border-right: 1px solid black;
   flex-direction: column;
   align-items: center;
   border-radius: 0;
@@ -2557,8 +2571,6 @@ body {
 }
 
 .chatroom {
-  border-left: 1px solid black;
-  width: 80%;
   height: 98.5%;
   padding: 5px;
 }
@@ -2567,13 +2579,16 @@ body {
   height: 80%;
   margin: 8px;
   position: relative;
+  /* padding: 5px; */
 }
 
 .messageContainer {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
+  width: 90%;
+  margin: 8px;
+  position: relative;
 }
 
 hr {
@@ -2616,18 +2631,19 @@ hr {
 }
 
 #required {
-  color: red;
+  /* color: rgb(255, 48, 48); */
   font-size: medium;
-  background-color: antiquewhite;
+  font-weight: bold;
+  /* background-color: rgba(250, 235, 215, 0.552); */
   margin-left: 10px;
-  width: 30%;
+  width: 60%;
   padding: 2px;
   text-align: center;
   border-radius: 20px;
 }
 
 #chatReply {
-  width: 85%;
+  width: 75%;
   height: 30px;
   padding: 2px;
   margin: 5px 0px 5px 8px;
@@ -2636,15 +2652,15 @@ hr {
 }
 
 #chatReply:focus {
-  width: 95%;
+  width: 80%;
   border-radius: 0;
 }
 
 #sendMsg {
   width: 10%;
+  min-width: 50px;
   height: 30px;
   text-align: center;
-  margin: 0 auto;
   padding: 0;
   padding-top: 5px;
 }
@@ -2744,6 +2760,16 @@ hr {
 @media (min-width: 640px) {
   .sm\:underline {
     text-decoration-line: underline;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-3\/5 {
+    width: 60%;
+  }
+
+  .md\:w-4\/5 {
+    width: 80%;
   }
 }
 
