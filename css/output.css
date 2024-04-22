@@ -818,6 +818,10 @@ video {
   display: none;
 }
 
+.h-1\/3 {
+  height: 33.333333%;
+}
+
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -2484,6 +2488,178 @@ body {
   );
 }
 
+.mainContent {
+  /* width: 60%; */
+  /* width: 60%; */
+  height: 80vh;
+  border-radius: 40px;
+  display: flex;
+  box-shadow: 0px 0px 73px 2px rgba(56, 142, 139, 0.45);
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.online {
+  width: 20%;
+  height: 98.5%;
+  padding: 5px;
+  border-right: 1px solid black;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  overflow: hidden;
+}
+
+hr {
+  width: 100%;
+  border-color: #173540;
+  border-width: 1.45px;
+}
+
+.peopleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  border-radius: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+/* People within the people container */
+
+.personOnline {
+  width: 80%;
+  max-height: 45px;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px;
+  margin: 10px 0;
+  cursor: pointer;
+  color: white;
+}
+
+.personOnline:hover {
+  width: 85%;
+  background-color: #6b941c;
+}
+
+.personOffline {
+  width: 80%;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px;
+  margin: 10px 0;
+  pointer-events: none;
+  opacity: 0.75;
+  color: #aad447;
+}
+
+/* Finish */
+
+/* Full Chatroom Container */
+
+.chatroom {
+  height: 98.5%;
+  padding: 5px;
+}
+
+/* Chatroom messages */
+
+.chatContainer {
+  height: 70%;
+  margin: 8px;
+  position: relative;
+}
+
+.chatMessage {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin: 5px;
+  padding-left: 15px;
+  border-radius: 30px;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.myMessage {
+  width: 25%;
+  display: block;
+  border-bottom-right-radius: 0;
+  margin-left: 75%;
+  color: black;
+}
+
+.replyMessage {
+  width: 25%;
+  display: block;
+  border-bottom-left-radius: 0;
+}
+
+/* Send Messages */
+
+.messageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 8px;
+  position: relative;
+  height: 30%;
+}
+
+#chatReply {
+  width: 75%;
+  height: 30px;
+  padding: 2px;
+  margin: 5px 0px 5px 8px;
+  border-radius: 13px;
+  color: black;
+}
+
+#chatReply:focus {
+  width: 80%;
+  border-radius: 0;
+}
+
+#sendMsg {
+  width: 10%;
+  min-width: 50px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  padding-top: 5px;
+}
+
+#required {
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 10px;
+  width: 60%;
+  padding: 2px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/* End Chatroom Container */
+
+/* Toast Container */
+
 .toastContainer {
   visibility: hidden;
   position: fixed;
@@ -2532,168 +2708,9 @@ body {
   }
 }
 
-.mainContent {
-  /* width: 60%; */
-  height: 80vh;
-  border-radius: 40px;
-  display: flex;
-  box-shadow: 0px 0px 73px 2px rgba(56, 142, 139, 0.45);
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+/* End Toast Container */
 
-.online {
-  width: 20%;
-  height: 98.5%;
-  padding: 5px;
-  border-right: 1px solid black;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 0;
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
-  overflow: hidden;
-}
-
-.peopleContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  border-radius: 0;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-
-.chatroom {
-  height: 98.5%;
-  padding: 5px;
-}
-
-.chatContainer {
-  height: 80%;
-  margin: 8px;
-  position: relative;
-  /* padding: 5px; */
-}
-
-.messageContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 90%;
-  margin: 8px;
-  position: relative;
-}
-
-hr {
-  width: 100%;
-  border-color: #173540;
-  border-width: 1.45px;
-}
-
-.personOnline {
-  width: 80%;
-  max-height: 45px;
-  height: 35px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 3px;
-  margin: 10px 0;
-  cursor: pointer;
-  color: white;
-}
-
-.personOnline:hover {
-  width: 85%;
-  background-color: #6b941c;
-}
-
-.personOffline {
-  width: 80%;
-  height: 35px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 3px;
-  margin: 10px 0;
-  pointer-events: none;
-  opacity: 0.75;
-  color: #aad447;
-}
-
-#required {
-  /* color: rgb(255, 48, 48); */
-  font-size: medium;
-  font-weight: bold;
-  /* background-color: rgba(250, 235, 215, 0.552); */
-  margin-left: 10px;
-  width: 60%;
-  padding: 2px;
-  text-align: center;
-  border-radius: 20px;
-}
-
-#chatReply {
-  width: 75%;
-  height: 30px;
-  padding: 2px;
-  margin: 5px 0px 5px 8px;
-  border-radius: 13px;
-  color: black;
-}
-
-#chatReply:focus {
-  width: 80%;
-  border-radius: 0;
-}
-
-#sendMsg {
-  width: 10%;
-  min-width: 50px;
-  height: 30px;
-  text-align: center;
-  padding: 0;
-  padding-top: 5px;
-}
-
-.chatMessage {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  margin: 5px;
-  padding-left: 15px;
-  border-radius: 30px;
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.myMessage {
-  width: 25%;
-  display: block;
-  border-bottom-right-radius: 0;
-  margin-left: 75%;
-  color: black;
-}
-
-.replyMessage {
-  width: 25%;
-  display: block;
-  border-bottom-left-radius: 0;
-}
-
-.members {
-  height: 40px;
-}
+/* Other Styles */
 
 .material-symbols-outlined.md-36 {
   font-size: 36px;
@@ -2768,14 +2785,18 @@ hr {
     width: 60%;
   }
 
-  .md\:w-4\/5 {
-    width: 80%;
+  .md\:p-0 {
+    padding: 0px;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:w-4\/5 {
+    width: 80%;
   }
 }
 

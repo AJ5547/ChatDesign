@@ -22,11 +22,9 @@ function closeToast() {
   // toastContainer.style.animation = "fadeout 0.7s 4.5s forwards";
 }
 
-// TODO filter array, people online first, then people offline
 function showOnline() {
   var peopleContainer = document.querySelector(".peopleContainer");
   const onlinePeople = people.filter((people) => people.status === "online");
-  const offlinePeople = people.filter((people) => people.status === "offline");
   onlinePeople.forEach((people) => {
     console.log(people);
     if (people.status === "online") {
